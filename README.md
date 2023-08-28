@@ -70,30 +70,35 @@ Una vez haya terminado, puede cerrar el servidor introduciendo, desde el cliente
 
 Pruebas realizadas:
 
+Pagina html:
 ![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/6b1a1a69-8311-4a3a-8654-b79308d9b7e3)
+
+Archivo css:
 ![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/d34736bb-5466-4c1a-a25b-07e66c504aca)
+
+Archivo js:
+![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/a3375cbe-5fa5-4f72-91b8-bd058b15f50d)
+
+Imagen jpg:
 ![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/3707c7ce-7e54-44cc-b36f-3d4cf5253f5c)
 
+Aplicacion web:
+![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/db1946ba-c6d6-4200-9ce9-3b7ed8ebd924)
+![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/3334d16c-9cfc-4428-b5f4-d297a9c0b8c4)
 
+Pagina erronea:
+![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/a3080618-9267-4967-bb52-1fa9dcf81ba5)
 
 
 
 ## Implementacion
 
-NOTA 1
-Una forma adicional de ejecutar el programa, permitiendo realizar busquedas manuales desde el cliente Java (sin necesidad de un explorador web), es, desde un IDLE de Java, ejecutar la clase App (servidor) seguida de la clase HttpClient (cliente). Una vez hecho esto, podremos ver informacion de peliculas desde la pantalla de resultado de el cliente Http, y podremos peliculas tal y como si fuese desde el browser (omitiendo la agradable interfaz). Al igual que desde el browser, podemos apagar el Sever introduciendo " _" en el campo de busqueda y luego enviando la solicitud.
-
-NOTA 2
 En el backend se utilizo codigo fuente puro Java (sin ningun tipo de framework). Se utilizo JavaScript asincrono como cliente web ejecutado en el explorador web, asi como formato JSON para los mensajes de respuesta. 
 Tambien se utilizaron sockets, los cuales tienen la funcion de comunicar dos programas: un cliente y un servidor. El proposito de esto es poder conectarse al servidor web, por lo que el cliente y servidor se conectaron entre si a traves de sus sockets "cliente" (el servidor abre otro socket adicional). Para esto, el cliente debe buscar comunicarse con el servidor especificando la IP destino a la que pretende conectarse, y por cual puerto, mientras que el servidor abre su respectivo puerto.
 Para implementar el servidor web se utilizo HTTP.
 El explorador web se conecto al servidor web por medio de sockets (los cuales utilizan el protocolo TCP -> Orientado a Coenxion).
 El flujo es el siguiente: Se abre la conexion TCP -> El explorador wb envia solicitud HTTP al servidor -> El servidor responder al explorador web -> Cierre de conexion.
 Ademas, para la conexion desde el servidor http al servidor externo se utilizaron servicios GET desde Java.
-
-NOTA 3
-El diseño es sumamente extensible. Se puede extender para que, cuando se introduzca un titulo de pelicula "comun" (es decir, que hay mas de una pelicula que se llama exactamente asi) se pueda aplicar otra clase de filtros o criterios sobre la busqueda que la misma API ofrece por su cuenta, tales como: año de estreno y tipo de resultado (cine, serie o episodio). De esta manera, cuando haya mas de una pelicula con el mismo nombre, se puede estar casi seguro de encontrar la que uno busca si se aplican los parametros antes mencinados. En este caso, se podria crear alguna estructura de datos que guarde los resultados con el mismo nombre, de tal manera que, una vez se encuentren, no sea necesario volver a consultar con el API externo sino que los siguientes filtros se apliquen sobre la propia estructura que los contiene.
-Personalmente, creo que negocios como Cine Colombia deberian tener mas enfoque con el cine que el que tienen ahorita. Pues en su pagina web solo aparecen peliculas que estan EN CARTELERA, pero opino que una empresa tan famosa y con una pagina tan visitada podrian implementar que se pueda consultar informacion de cualquier pelicula. Ademas, tambien podria serviles para expandirse mas alla del cine, inmersionandose en las series.
 
 ## Construido con
 
