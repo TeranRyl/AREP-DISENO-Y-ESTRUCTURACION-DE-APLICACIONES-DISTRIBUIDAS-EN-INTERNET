@@ -1,6 +1,6 @@
-# APLICACIONES DISTRIBUIDAS (HTTP, SOCKETS, HTML, JS,MAVEN, GIT)
+# DISEÑO Y ESTRUCTURACIÓN DE APLICACIONES DISTRIBUIDAS EN INTERNET
 
-Una aplicacion para consultar los datos de la pelicula de cine deseada. La busqueda se hace por titulo, utilizando el API "omdbapi.com" e implementando cache.
+Un servidor web que lee los archivos del disco local y retorna todos los archivos solicitados, incluyendo páginas html, archivos java script, css e imágenes. Se construyo una aplicación web con javascript, css, e imágenes para probar el servidor.
 
 ## Instrucciones para ejecutar
 
@@ -21,7 +21,7 @@ Para descargar la aplicacion, ya estando aqui, se necesita un equipo de computo 
 
 - Explorador web
 
-- (OPCIONAL) Personal API key Omdbapi
+- 
 
 - (RECOMENDACION) Tener todo actualizado
 ```
@@ -38,62 +38,38 @@ Paso a paso
 
 3. Abrir el Shell de su preferencia.
 
-4. Desde el Shell, muevase a la ubicacion donde extrajo el archivo .ZIP (Deberia estar dentro de la carpeta llamada  "ARQUITECTURAS-EMPRESARIALES-TALLER-1-master").
+4. Desde el Shell, muevase a la ubicacion donde extrajo el archivo .ZIP (Deberia estar dentro de la carpeta llamada  "ARQUITECTURAS-EMPRESARIALES-TALLER-2-master").
 
 5. Desde el Shell, escriba "mvn package" (este comando compila, construye y empaqueta el proyecto en un .JAR).
 
-6. Desde el Shell, escriba "java -cp target/Taller1-1.0-SNAPSHOT.jar edu.escuelaing.app.App" para ejecutar la aplicacion.
+6. Desde el Shell, escriba "java -cp target/Taller2-1.0-SNAPSHOT.jar edu.escuelaing.app.App" para ejecutar la aplicacion.
    Deberia ver un mensaje diciendo "Listo para recibir... ".
 
-7. Abra su explorador web de preferencia y busque en una pestaña incognita lo siguiente: "localhost:35001" (SIN LAS COMILLAS).
+7. Abra su explorador web de preferencia y busque en una pestaña incognita lo siguiente:
+   
+   - "localhost:35001/web/terminos.html" (SIN LAS COMILLAS) - Pagina html con ruta "src/main/resources/terminos.html"
+   - "localhost:35001/web/style.css" (SIN LAS COMILLAS) - Archivo css con ruta "src/main/resources/style.css"
+   - "localhost:35001/web/app.js" (SIN LAS COMILLAS) - Archivo javascript con ruta "src/main/resources/app.js"
+   - "localhost:35001/web/risas.jpg" (SIN LAS COMILLAS) - Imagen jpg con ruta "src/main/resources/risas.jpg"
 
-8. Entonces, tendra acceso a un software que le permite consultar toda la informacion de peliculas relacionada al cine.
+8. Buscando "localhost:35001/web/index.html" (SIN LAS COMILLAS) o "localhost:35001/web/*CUALQUIERTEXTO_O_VACIO*" (SIN LAS COMILLAS Y ASTERISCOS) tendra acceso a una aplicacion que incluye archivos html, css, js y jpg.
 
-9. Para hacerlo, debe buscar la pelicula que le interesa por su titulo original, el cual muy seguramente este escrito en ingles, y posteriormente debe pulsar sobre el
-   boton "Submit" para enviar la solicitud al API de la pelicula que busca.
-   En pantalla podra ver toda la informacion que el API pudo proveer sobre su eleccion.
+9. Esta aplicacion web incluye comunicacion asincrona con servicios REST. Para probar esto, debe introducir cualquier cadena en el campo de texto y posteriormente debe pulsar sobre el boton "Submit" para enviar la 
+   solicitud HTTP y traer el contenido de "terminos.html". En pantalla podra ver, adicional al "index.html", la pagina "terminos.html" cargada.
 ```
 
-Puede hacer cuantas consultas quiera. Para cerrar el servicio puede introducir en el campo de texto cualquier cadena que inicie con un espacio en blanco, por ejemplo " _", y el servidor se apagara enseguida. 
+Puede enviar cuantas cadenas de texto quiera.
 
 ```
-Una vez haya terminado, puede cerrar el servicio introduciendo en el campo de texto " _" y el servidor se apagara enseguida.
+Una vez haya terminado, puede cerrar el servidor introduciendo, desde el cliente, la URL "localhost:35001/web/salir.exe" (SIN LAS COMILLAS) y el servidor se apagara enseguida.
 
 ```
-
-¡¡"Oppenheimer" salio apenas hace unas semanas a las salas de cine, pero la API ya puede obtener todos sus datos!!
 
 ## Ejecucion de las pruebas
 
 La aplicacion cuenta con pruebas automatizadas, tanto unitarias como concurrentes. Para demostrar las pruebas de concurrencia, es necesario que el servidor web este en pleno funcionamiento mientras se corren las pruebas. Para ello, tendremos que abrir 2 Shells al mismo tiempo: en uno ejecutaremos primero "java -cp target/Taller1-1.0-SNAPSHOT.jar edu.escuelaing.app.App", una vez aparezca en pantalla el mensaje "Listo para recibir...", en el otro pondremos el comando "mvn test".
 
 NOTA: Para abortar el shell con el servidor encendido, podemos presionar "CTRL" + "C".
-
-### Pruebas unitarias (TDD)
-
-Se hicieron 5 pruebas unitarias a 3 metodos.
-
-Primero estan las pruebas del metodo "getTitle" de la clase "App".
-Estas pruebas verifican que el método devuelve el resultado correcto al obtener la información de una película en formato JSON.
-Por ejemplo, para la pelicula "Hola" podemos obtener la informacion completa de ella, en formato JSON, gracias al API y la direccion web "https://www.omdbapi.com/?t=Hola&apikey=2017f520", por tanto es importante rectificar que "app.getTitle("Hola")" sea equivalente, pues es importante que los mensajes que devuelva el servidor sean completos y esten en el formato correcto.
-```
-{\"Title\":\"Hola\",\"Year\":\"2005\",\"Rated\":\"N/A\",\"Released\":\"01 Mar 2005\",\"Runtime\":\"61 min\",\"Genre\":\"N/A\",\"Director\":\"Ana Ynsaurralde\",\"Writer\":\"Ana Ynsaurralde\",\"Actors\":\"Raquel Adoler, Julieta Buschiazzo, Gabriel Coba\",\"Plot\":\"N/A\",\"Language\":\"Spanish\",\"Country\":\"Argentina\",\"Awards\":\"N/A\",\"Poster\":\"N/A\",\"Ratings\":[{\"Source\":\"Internet Movie Database\",\"Value\":\"5.2/10\"}],\"Metascore\":\"N/A\",\"imdbRating\":\"5.2\",\"imdbVotes\":\"5\",\"imdbID\":\"tt0451761\",\"Type\":\"movie\",\"DVD\":\"N/A\",\"BoxOffice\":\"N/A\",\"Production\":\"N/A\",\"Website\":\"N/A\",\"Response\":\"True\"}
-```
-Para los otros 2 metodos, es conveniente revisar la documentacion respectiva pues en ella se explican sus funcionamientos y propositos.
-
-### Y pruebas de concurrencia
-
-En estas pruebas automatizadas, se envian 20 solicitudes al servidor desde un cliente Java. Importante estas pruebas para verificar el correcto manejo de las consultas por parte del servidor web.
-Lo que se hizo fue comprobar si cada una de las respuestas de las solicitudes era correcta, de acuerdo a los valores previamente definidos y guardados, en una estructura de datos sencilla, para comparar con la respuesta que obtenia el servidor.
-
-```
-Title: Halloween II
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{"Title":"Halloween II","Year":"1981","Rated":"R","Released":"30 Oct 1981","Runtime":"92 min","Genre":"Horror","Director":"Rick Rosenthal","Writer":"John Carpenter, Debra Hill","Actors":"Jamie Lee Curtis, Donald Pleasence, Charles Cyphers","Plot":"While Dr. Loomis hunts for Michael Myers, a traumatized Laurie is rushed to Haddonfield Memorial Hospital, and The Shape is not far behind her.","Language":"English","Country":"United States","Awards":"1 win & 3 nominations","Poster":"https://m.media-amazon.com/images/M/MV5BMjZmYjg0ODctOTIyYy00YzhkLTgyMzEtNjUyY2JiZjVmYzI2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"6.5/10"},{"Source":"Rotten Tomatoes","Value":"33%"},{"Source":"Metacritic","Value":"40/100"}],"Metascore":"40","imdbRating":"6.5","imdbVotes":"96,871","imdbID":"tt0082495","Type":"movie","DVD":"19 Oct 2015","BoxOffice":"$25,533,818","Production":"N/A","Website":"N/A","Response":"True"}
-Concurrent Test: true
-```
 
 ## Implementacion
 
@@ -116,9 +92,8 @@ Personalmente, creo que negocios como Cine Colombia deberian tener mas enfoque c
 
 * [Java](https://www.oracle.com/co/java/) - Backend
 * [Maven](https://maven.apache.org/) - Gestion de ciclo de vida y dependencias
-* [omdbapi](https://www.omdbapi.com) - API externo de peliculas
 * [Git/Github](https://git-scm.com/) - Almacenar el codigo fuente
-* [JSON](https://www.json.org/json-es.html) - Formato para los mensajes de intercambio
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/) - IDE para desarrollo
 
 ## Autores
 
@@ -130,5 +105,6 @@ Este proyecto tiene la licencia GNU General Public License v3.0; consulte el arc
 
 ## Reconocimientos
 
-* Santiago Rocha - Aclaracion de dudas
+* PurpleBooth - Plantilla para hacer un buen README
+* Luis Daniel Benavides - Preparacion e introduccion al diseño de sistemas de informacion. Preparacion para el taller.
 
