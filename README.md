@@ -97,7 +97,7 @@ Pagina erronea:
 
 ## Implementacion
 
-En el backend se utilizo codigo fuente puro Java (sin ningun tipo de framework). Se utilizo JavaScript asincrono como cliente web ejecutado en el explorador web.
+En el backend se utilizo codigo fuente puro Java (sin ningun tipo de framework). Se utilizo JavaScript asincrono como cliente web ejecutado como explorador web.
 Tambien se utilizaron sockets, los cuales tienen la funcion de comunicar dos programas: un cliente y un servidor. El proposito de esto es poder conectarse al servidor web, por lo que el cliente y servidor se conectaron entre si a traves de sus sockets "cliente" (el servidor abre otro socket adicional). Para esto, el cliente debe buscar comunicarse con el servidor especificando la IP destino a la que pretende conectarse, y por cual puerto, mientras que el servidor abre su respectivo puerto.
 Para implementar el servidor web se utilizo HTTP.
 El explorador web se conecto al servidor web por medio de sockets (los cuales utilizan el protocolo TCP -> Orientado a Coenxion).
@@ -117,7 +117,7 @@ Entonces, el explorador pide y ejecuta lo que el servidor web le envie, y luego 
 
 ## Licencia
 
-Este proyecto tiene la licencia GNU General Public License v3.0; consulte el archivo [LICENSE.txt](LICENSE.txt) para obtener más información.
+Este proyecto tiene la licencia GNU General Public License v3.0; consulte el archivo [LICENSEE](LICENSE.txt) para obtener más información.
 
 ## Reconocimientos
 
