@@ -17,7 +17,8 @@ import java.nio.file.Paths;
  26/08/2023
 
  DISEÑO Y ESTRUCTURACIÓN DE APLICACIONES DISTRIBUIDAS EN INTERNET
- El servidor debe leer los archivos del disco local y retornar todos los archivos solicitados, incluyendo páginas html, archivos java script, css e imágenes. Construya una aplicación web con  javascript, css, e imágenes para probar su servidor. Incluya en la aplicación la comunicación asíncrona con unos servicios REST en el backend.
+ En este taller usted explorará la arquitectura de las aplicaciones distribuidas. Concretamente, exploraremos la
+ arquitectura de  los servidores web y el protocolo http sobre el que están soportados.
 
  https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2
 
@@ -29,8 +30,15 @@ import java.nio.file.Paths;
 public class App {
 
     /**
-     * A web application to consult movie information searching by title, using different distributed applications (JS, HTML, Maven, among others)
-     * @throws IOException if an error occurs while making the HTTP connection
+     * Crea un socket de servidor web y escucha las conexiones entrantes.
+     * El socket del servidor se crea en el puerto 35001 y el servidor escucha las conexiones entrantes hasta que finaliza.
+     * Cuando se acepta una conexión, el servidor crea un PrintWriter y un BufferedReader para comunicarse con el cliente (explorador web).
+     * El servidor lee datos del cliente y los procesa de acuerdo con la URL especificada (el servior lee el disco local y retorna los archivos solicitados por el cliente).
+     * El programa funciona con archivos como HTML, CSS, JavaScript e imágenes JPG del directorio "src/main/resources".
+     * Crea una aplicacion web para probar el servidor y que invoca servicios REST de forma asincrona desde el cliente.
+     *
+     * @param args argumentos de línea de comando (no utilizados)
+     * @throws IOException si se produce un error de Input-Output al crear el socket del servidor o al comunicarse con el cliente
      */
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
@@ -156,6 +164,7 @@ public class App {
                         respuesta = "HTTP/1.1 200 OK\r\n"
                                 + "Content-Type: text/html\r\n"
                                 + "\r\n"
+                                // +"Hola";*/
                                 + leerIndex;
                     }
 
@@ -170,10 +179,10 @@ public class App {
                         + "<html>"
                         + "<head>"
                         + "<meta charset=\"UTF-8\">"
-                        + "<title>Error</title>\n"
+                        + "<title>ERROR 404/title>\n"
                         + "</head>"
                         + "<body>"
-                        + "ERROR"
+                        + "ERROR 404: Pagina no encontrada"
                         + "</body>"
                         + "</html>";
 
@@ -194,6 +203,5 @@ public class App {
         }
         serverSocket.close();
     }
-
 }
 
