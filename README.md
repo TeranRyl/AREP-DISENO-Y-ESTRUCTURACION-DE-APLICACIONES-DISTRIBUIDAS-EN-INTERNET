@@ -21,8 +21,6 @@ Para descargar la aplicacion, ya estando aqui, se necesita un equipo de computo 
 
 - Explorador web
 
-- 
-
 - (RECOMENDACION) Tener todo actualizado
 ```
 Esta guia no incluye tutoria para la descarga e instalacion de los anteriores mencionados. Si no cuenta con algo, o no sabe, le recomiendo ver algun video en Youtube.
