@@ -75,15 +75,15 @@ public class App {
             //Path rutaHtml = Paths.get("src/main/resources/terminos.html");
             //String leerHtml = Files.readString(rutaHtml);
 
-            String pelicula, respuesta;
+            String busqueda, respuesta;
             boolean firstLine = true;
             String urlString = "";
-            while ((pelicula = in.readLine()) != null) {
-                System.out.println("Received: " + pelicula);
+            while ((busqueda = in.readLine()) != null) {
+                System.out.println("Received: " + busqueda);
                 if (firstLine) {
                     firstLine = false;
-                    urlString = pelicula.split(" ")[1];
-                    System.out.println("Data request: " + pelicula);
+                    urlString = busqueda.split(" ")[1];
+                    System.out.println("Data request: " + busqueda);
 
                     //System.out.println("HOLA" + urlString);
                     // POST
@@ -100,7 +100,7 @@ public class App {
             //System.out.println("HOLI");
             //System.out.println("HOLA JAJAJAJAJA" + urlString.startsWith("/web"));
 
-            if (urlString.startsWith("/web")) {
+            if (urlString.startsWith("/web/")) {
 
                 //System.out.println(urlString.equals("/web/terminos"));
 
@@ -179,10 +179,11 @@ public class App {
                         + "<html>"
                         + "<head>"
                         + "<meta charset=\"UTF-8\">"
-                        + "<title>ERROR 404/title>\n"
+                        + "<title>ERROR 404"
+                        + "</title>"
                         + "</head>"
                         + "<body>"
-                        + "ERROR 404: Pagina no encontrada"
+                        + "<h1>ERROR 404: Pagina no encontrada</h1>"
                         + "</body>"
                         + "</html>";
 
