@@ -105,6 +105,7 @@ Para implementar el servidor web se utilizo HTTP.
 El explorador web se conecto al servidor web por medio de sockets (los cuales utilizan el protocolo TCP -> Orientado a Coenxion).
 El flujo es el siguiente: Se abre la conexion TCP -> El explorador wb envia solicitud HTTP al servidor -> El servidor responder al explorador web -> Cierre de conexion.
 
+
 NOTA 2
 
 El explorador pide y ejecuta lo que el servidor web le envie, y luego el servidor devuelve el resultado (paginas html, archivos css y js e imagenes jpg).
