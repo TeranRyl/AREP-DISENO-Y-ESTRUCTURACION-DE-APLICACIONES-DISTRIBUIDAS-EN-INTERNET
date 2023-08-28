@@ -117,7 +117,7 @@ Entonces, el explorador pide y ejecuta lo que el servidor web le envie, y luego 
 
 ## Licencia
 
-Este proyecto tiene la licencia GNU General Public License v3.0; consulte el archivo [LICENSEE](LICENSE.txt) para obtener más información.
+Este proyecto tiene la licencia GNU General Public License v3.0; consulte el archivo [LICENSE.txt](LICENSE) para obtener más información.
 
 ## Reconocimientos
 
