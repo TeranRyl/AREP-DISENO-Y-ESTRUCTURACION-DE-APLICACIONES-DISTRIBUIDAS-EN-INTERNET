@@ -72,27 +72,22 @@ Pagina html:
 
 ![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/6b1a1a69-8311-4a3a-8654-b79308d9b7e3)
 
-
 Archivo css:
 
 ![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/d34736bb-5466-4c1a-a25b-07e66c504aca)
-
 
 Archivo js:
 
 ![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/a3375cbe-5fa5-4f72-91b8-bd058b15f50d)
 
-
 Imagen jpg:
 
 ![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/3707c7ce-7e54-44cc-b36f-3d4cf5253f5c)
-
 
 Aplicacion web:
 
 ![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/db1946ba-c6d6-4200-9ce9-3b7ed8ebd924)
 ![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/3334d16c-9cfc-4428-b5f4-d297a9c0b8c4)
-
 
 Pagina erronea:
 
