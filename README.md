@@ -56,20 +56,27 @@ Paso a paso
 
 9. Esta aplicacion web incluye comunicacion asincrona con servicios REST. Para probar esto, debe introducir cualquier cadena en el campo de texto y posteriormente debe pulsar sobre el boton "Submit" para enviar la 
    solicitud HTTP y traer el contenido de "terminos.html". En pantalla podra ver, adicional al "index.html", la pagina "terminos.html" cargada.
+
+NOTA: Para abortar el shell con el servidor encendido, podemos presionar "CTRL" + "C".
 ```
 
 Puede enviar cuantas cadenas de texto quiera.
 
-```
 Una vez haya terminado, puede cerrar el servidor introduciendo, desde el cliente, la URL "localhost:35001/web/salir.exe" (SIN LAS COMILLAS) y el servidor se apagara enseguida.
 
-```
 
-## Ejecucion de las pruebas
 
-La aplicacion cuenta con pruebas automatizadas, tanto unitarias como concurrentes. Para demostrar las pruebas de concurrencia, es necesario que el servidor web este en pleno funcionamiento mientras se corren las pruebas. Para ello, tendremos que abrir 2 Shells al mismo tiempo: en uno ejecutaremos primero "java -cp target/Taller1-1.0-SNAPSHOT.jar edu.escuelaing.app.App", una vez aparezca en pantalla el mensaje "Listo para recibir...", en el otro pondremos el comando "mvn test".
+## Evaluacion
 
-NOTA: Para abortar el shell con el servidor encendido, podemos presionar "CTRL" + "C".
+Pruebas realizadas:
+
+![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/6b1a1a69-8311-4a3a-8654-b79308d9b7e3)
+![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/d34736bb-5466-4c1a-a25b-07e66c504aca)
+![image](https://github.com/TeranRyl/ARQUITECTURAS-EMPRESARIALES-TALLER-2/assets/81679109/3707c7ce-7e54-44cc-b36f-3d4cf5253f5c)
+
+
+
+
 
 ## Implementacion
 
